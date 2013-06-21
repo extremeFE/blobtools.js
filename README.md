@@ -16,7 +16,7 @@ var blob = blobtools.b64toBlob(data, contentType);
 blobtools.uploadBlob({ // upload blob
   blob: blob,
   url: uploadUrl, // upload url
-  prefix: 'paste_image', // filename prefix ex) 'paste_image_12876381762.png'
+  fileName : 'paste_image.png' // upload file name
   callback: callback // callback after upload
 });
 ```

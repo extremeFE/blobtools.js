@@ -34,10 +34,8 @@
   // > upload blob
   // > data : {blob: blob, url: uploadUrl, prefixFileName: 'paste_image', callback: callback}
   blobtools.uploadBlob = function(data) {
-    data.prefix = (data.prefix || 'upload_file') + '_';
     var formData = new FormData();
-    var fileName = [data.prefix,$.now(),'.',data.blob.type.replace('image/','')].join('');
-    formData.append('file', data.blob, fileName);
+    formData.append('file', data.blob, data.fileName);
 
     $.ajax({
       url: data.url,
